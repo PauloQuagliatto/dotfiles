@@ -1,0 +1,64 @@
+# -----------------------------------------------------
+# ALIASES
+# -----------------------------------------------------
+
+# -----------------------------------------------------
+# General
+# -----------------------------------------------------
+
+alias ls="exa --icons"
+alias bat="bat --style=auto"
+alias n="nvim"
+
+# -----------------------------------------------------
+# Package Managers
+# -----------------------------------------------------
+pm() {
+    if [ -f yarn.lock ]; then
+        yarn "$@"
+    elif [ -f pnpm-lock.yaml ]; then
+        pnpm "$@"
+    elif [ -f package-lock.json ]; then
+        npm "$@"
+    elif [ -f pnpm-lock.yaml ]; then
+        pnpm "$@"
+    fi
+}
+
+dpm() {
+    if [ -f yarn.lock ]; then
+        doppler run -- yarn "$@"
+    elif [ -f pnpm-lock.yaml ]; then
+        doppler run -- pnpm "$@"
+    elif [ -f package-lock.json ]; then
+        doppler run -- npm "$@"
+    elif [ -f pnpm-lock.yaml ]; then
+        doppler run -- pnpm "$@"
+    fi
+}
+
+
+# -----------------------------------------------------
+# Navigational
+# -----------------------------------------------------
+work () {
+    selected=$(find ~/Documents/work  -mindepth 1 -maxdepth 1 -type d | fzf)
+    cd $selected
+}
+
+study () {
+    selected=$(find ~/Documents/studies -mindepth 1 -maxdepth 1 -type d | fzf)
+    cd $selected
+}
+
+dcf () {
+    selected=$(find ~/Documents/docker-compose-files -mindepth 1 -maxdepth 1 -type d | fzf)
+    cd $selected
+}
+
+# -----------------------------------------------------
+# Update discord
+# -----------------------------------------------------
+ud() {
+   sudo tar -xvzf discord.tar.gz Discord && sudo rm -rf /opt/discord && sudo mv Discord /opt/discord
+}

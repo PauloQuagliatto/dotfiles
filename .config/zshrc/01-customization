@@ -1,0 +1,5 @@
+ZSH_THEME="half-life"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
