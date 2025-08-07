@@ -28,6 +28,7 @@ return {
           'dockerls',
           'docker_compose_language_service',
           'lua_ls',
+          'prettier',
           'tailwindcss',
           'ts_ls',
           'zls'
