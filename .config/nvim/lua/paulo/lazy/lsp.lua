@@ -27,6 +27,7 @@ return {
         ensure_installed = {
           'dockerls',
           'docker_compose_language_service',
+          'eslint_d',
           'lua_ls',
           'prettier',
           'tailwindcss',
