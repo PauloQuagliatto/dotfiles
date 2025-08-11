@@ -80,5 +80,6 @@ keybind = ctrl+shift+v=paste_from_clipboard
 # My Preferences
 maximize = true
 shell-integration = zsh
+shell-integration-features = no-cursor
 cursor-style = block
 window-decoration = none
