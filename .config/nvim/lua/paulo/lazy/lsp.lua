@@ -22,14 +22,18 @@ return {
         cmp_lsp.default_capabilities()
       )
       require("fidget").setup()
-      require('mason').setup()
+      require('mason').setup({
+        ensure_installed = {
+          'eslint_d',
+          'prettier',
+          'ruff'
+        }
+      })
       require('mason-lspconfig').setup({
         ensure_installed = {
           'dockerls',
           'docker_compose_language_service',
-          'eslint_d',
           'lua_ls',
-          'prettier',
           'tailwindcss',
           'ts_ls',
           'zls'
