@@ -26,31 +26,42 @@ return {
         ensure_installed = {
           'eslint_d',
           'prettier',
-          'ruff'
         }
       })
-      require('mason-lspconfig').setup({
-        ensure_installed = {
-          'dockerls',
-          'docker_compose_language_service',
-          'lua_ls',
-          'tailwindcss',
-          'ts_ls',
-          'zls'
+      local servers = {
+        dockerls = {},
+        docker_compose_language_service = {},
+        lua_ls = {},
+        tailwindcss = {},
+        ruff = {},
+        pylsp = {
+          settings = {
+            pylsp = {
+              plugins = {
+                pyflakes = { enabled = false },
+                pycodestyle = { enabled = false },
+                autopep8 = { enabled = false },
+                yapf = { enabled = false },
+                mccabe = { enabled = false },
+                pylsp_mypy = { enabled = false },
+                pylsp_black = { enabled = false },
+                pylsp_isort = { enabled = false },
+              },
+            },
+          },
         },
+        ts_ls = {},
+        zls = {}
+      }
+      local ensure_installed = vim.tbl_keys(servers or {})
+      require('mason-lspconfig').setup({
+        ensure_installed = ensure_installed,
         handlers = {
           ["ts_ls"] = function()
             local lspconfig = require("lspconfig")
             lspconfig.ts_ls.setup({
               capabilities = capabilities
             })
-            vim.keymap.set("n", "<leader>of", function()
-              vim.lsp.buf.execute_command({
-                command = "_typescript.organizeImports",
-                arguments = { vim.api.nvim_buf_get_name(0) },
-                title = ""
-              })
-            end)
             vim.keymap.set("n", "<leader>fa", function()
               vim.cmd.EslintFixAll()
             end)
@@ -60,9 +71,21 @@ return {
             lspconfig.lua_ls.setup({
               settings = {
                 Lua = {
+                  completion = {
+                    callSnippet = 'Replace',
+                  },
+                  runtime = { version = 'LuaJIT' },
+                  workspace = {
+                    checkThirdParty = false,
+                    library = vim.api.nvim_get_runtime_file('', true),
+                  },
                   diagnostics = {
-                    globals = { "vim" }
-                  }
+                    globals = { 'vim' },
+                    disable = { 'missing-fields' },
+                  },
+                  format = {
+                    enable = false,
+                  },
                 }
               }
             })
