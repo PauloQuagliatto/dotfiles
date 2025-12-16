@@ -9,11 +9,11 @@ return {
         {
           file_pattern = {
             ".env*",
-            ".dev.vars"
+            ".dev.vars",
           },
-          cloak_pattern = "=.+"
+          cloak_pattern = "=.+",
         },
       },
     })
-  end
+  end,
 }

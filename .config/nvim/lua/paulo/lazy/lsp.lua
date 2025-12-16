@@ -22,34 +22,14 @@ return {
         cmp_lsp.default_capabilities()
       )
       require("fidget").setup()
-      require('mason').setup({
-        ensure_installed = {
-          'eslint_d',
-          'prettier',
-        }
-      })
+      require('mason').setup({})
       local servers = {
+        biome = {},
         dockerls = {},
         docker_compose_language_service = {},
         lua_ls = {},
         tailwindcss = {},
         ruff = {},
-        pylsp = {
-          settings = {
-            pylsp = {
-              plugins = {
-                pyflakes = { enabled = false },
-                pycodestyle = { enabled = false },
-                autopep8 = { enabled = false },
-                yapf = { enabled = false },
-                mccabe = { enabled = false },
-                pylsp_mypy = { enabled = false },
-                pylsp_black = { enabled = false },
-                pylsp_isort = { enabled = false },
-              },
-            },
-          },
-        },
         ts_ls = {},
         zls = {}
       }
@@ -57,16 +37,19 @@ return {
       require('mason-lspconfig').setup({
         ensure_installed = ensure_installed,
         handlers = {
-          ["ts_ls"] = function()
+          ts_ls = function()
             local lspconfig = require("lspconfig")
             lspconfig.ts_ls.setup({
-              capabilities = capabilities
+              capabilities = capabilities,
             })
-            vim.keymap.set("n", "<leader>fa", function()
-              vim.cmd.EslintFixAll()
-            end)
           end,
-          ["lua_ls"] = function()
+          biome = function()
+            local lspconfig = require("lspconfig")
+            lspconfig.biome.setup({
+              capabilities = capabilities,
+            })
+          end,
+          lua_ls = function()
             local lspconfig = require("lspconfig")
             lspconfig.lua_ls.setup({
               settings = {
@@ -95,7 +78,7 @@ return {
               capabilities = capabilities
             })
           end,
-        }
+        },
       })
       local cmp = require("cmp")
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
@@ -141,5 +124,5 @@ return {
         virtual_text = true
       })
     end
-  }
+  },
 }
