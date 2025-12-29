@@ -1,17 +1,19 @@
 return {
   {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.8',
+    tag = '0.2.0',
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope-media-files.nvim'
     },
-
     config = function()
       require('telescope').load_extension('media_files')
       require("telescope").setup({
         defaults = {
-          file_ignore_patterns = { "node_modules" },
+          preview = {
+            treesitter = false,
+          },
+          file_ignore_patterns = { "node_modules", "zig-out" },
           -- wrap_results = true,
           path_display = { shorten = 4 }
         },
@@ -28,8 +30,8 @@ return {
 
 
       local builtin = require('telescope.builtin')
-      vim.keymap.set('n', '<leader>pf', builtin.find_files, {})
-      vim.keymap.set('n', '<C-p>', builtin.git_files, {})
+      vim.keymap.set('n', '<leader>pf', builtin.find_files, { desc = 'Telescope find files' })
+      vim.keymap.set('n', '<C-p>', builtin.git_files, { desc = 'Telescope git files' })
       vim.keymap.set("n", "<leader>pws", function()
         local word = vim.fn.expand("<cword>")
         builtin.grep_string({ search = word })
