@@ -26,7 +26,7 @@ return {
     },
     notify_on_error = false,
     formatters_by_ft = {
-      lua = { "stylua" },
+      go = { "goimports", "gofmt" },
       javascript = {
         "biome",
         "biome-organize-imports",
@@ -37,6 +37,9 @@ return {
         "biome-organize-imports",
         "prettier",
       },
+      lua = { "stylua" },
+      python = { "ruff" },
+      rust = { "rustfmt" },
       typescript = {
         "biome",
         "biome-organize-imports",
@@ -47,9 +50,6 @@ return {
         "biome-organize-imports",
         "prettier",
       },
-      go = { "goimports", "gofmt" },
-      rust = { "rustfmt" },
-      python = { "ruff" },
     },
   },
 }
