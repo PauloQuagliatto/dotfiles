@@ -10,6 +10,7 @@ return {
           "typescript",
           "c",
           "lua",
+          "python",
           "query",
           "vim",
           "vimdoc",
