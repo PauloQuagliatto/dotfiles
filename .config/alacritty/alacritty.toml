@@ -1,5 +1,18 @@
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/tokyo_night.toml"
+]
+
 [window]
 padding = { x = 4, y = 4 }
+startup_mode = "Maximized"
+decorations = "None"
 
 [font]
+normal = { family = "RobotoMono Nerd Font" }
+italic = { family = "RobotoMono Nerd Font", style = "italic" }
+bold = { family = "RobotoMono Nerd Font", style = "bold" }
 size = 16
+
+[scrolling]
+history = 100000

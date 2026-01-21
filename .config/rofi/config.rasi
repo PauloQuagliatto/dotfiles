@@ -34,7 +34,7 @@ configuration {
 @theme "~/.config/rofi/colors.rasi"
 
 /* ---- Load wallpaper ---- */
-@import "~/.cache/paulo/hyprland-dotfiles/current_wallpaper.rasi"
+//@import "~/.cache/paulo/hyprland-dotfiles/current_wallpaper.rasi"
 
 /* ---- Load border width ---- */
 @import "~/.config/paulo/settings/rofi-border.rasi"
@@ -44,8 +44,8 @@ configuration {
 
 // Main //
 window {
-    height:                      50em;
-    width:                       45em;
+    height:                      35em;
+    width:                       30em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
@@ -66,17 +66,6 @@ mainbox {
     children:                    [ "listbox" ];
     background-color:            transparent;
     background-image:            @current-image;
-}
-
-imagebox {
-    padding:                     20px;
-    background-color:            transparent;
-    orientation:                 vertical;
-    children:                    [ "inputbar", "dummy", "mode-switcher" ];
-}
-
-dummy {
-    background-color:            transparent;
 }
 
 // Modes //

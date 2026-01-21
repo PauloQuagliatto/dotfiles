@@ -38,7 +38,7 @@ return {
         "prettier",
       },
       lua = { "stylua" },
-      python = { "ruff" },
+      python = { "ruff_format" },
       rust = { "rustfmt" },
       typescript = {
         "biome",

@@ -62,11 +62,3 @@ dcf () {
 ud() {
    sudo tar -xvzf discord.tar.gz Discord && sudo rm -rf /opt/discord && sudo mv Discord /opt/discord
 }
-
-# -----------------------------------------------------
-# PYENV
-# -----------------------------------------------------
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PATH:$PYENV_ROOT/bin"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"

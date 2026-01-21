@@ -79,28 +79,6 @@ return {
               },
             })
           end,
-          pylsp = function()
-            local lspconfig = require("lspconfig")
-            local on_attach = require("plugins.lsp.handlers").on_attach
-            lspconfig.pylsp.setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
-              settings = {
-                pylsp = {
-                  plugins = {
-                    pyflakes = { enabled = false },
-                    pycodestyle = { enabled = false },
-                    autopep8 = { enabled = false },
-                    yapf = { enabled = false },
-                    mccabe = { enabled = false },
-                    pylsp_mypy = { enabled = false },
-                    pylsp_black = { enabled = false },
-                    pylsp_isort = { enabled = false },
-                  },
-                },
-              },
-            })
-          end,
           function(server_name)
             local on_attach = require("plugins.lsp.handlers").on_attach
             require("lspconfig")[server_name].setup({
@@ -142,6 +120,24 @@ return {
       })
 
       vim.lsp.config("lua_ls", {})
+      vim.lsp.config("pylsp", {
+        capabilities = capabilities,
+        settings = {
+          pylsp = {
+            plugins = {
+              pyflakes = { enabled = false },
+              pycodestyle = { enabled = false },
+              autopep8 = { enabled = false },
+              yapf = { enabled = false },
+              mccabe = { enabled = false },
+              pylsp_mypy = { enabled = false },
+              pylsp_black = { enabled = false },
+              pylsp_isort = { enabled = false },
+              ruff = { enabled = true, formatEnabled = true },
+            },
+          },
+        },
+      })
       vim.diagnostic.config({
         update_in_insert = true,
         float = {
