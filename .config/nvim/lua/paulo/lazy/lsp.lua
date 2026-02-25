@@ -34,18 +34,19 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = ensure_installed,
         handlers = {
-          ts_ls = function()
-            local lspconfig = require("lspconfig")
+          function(server_name)
             local on_attach = require("plugins.lsp.handlers").on_attach
-            lspconfig.ts_ls.setup({
-              capabilities = capabilities,
+            require("lspconfig")[server_name].setup({
               on_attach = on_attach,
+              capabilities = capabilities,
             })
           end,
-          biome = function()
+          ts_ls = function()
             local lspconfig = require("lspconfig")
-            local on_attach = require("plugins.lsp.handlers").on_attach
-            lspconfig.biome.setup({
+            local on_attach = function(client)
+              client.server_capabilities.documentFormattingProvider = false
+            end
+            lspconfig.ts_ls.setup({
               capabilities = capabilities,
               on_attach = on_attach,
             })
@@ -77,13 +78,6 @@ return {
                   },
                 },
               },
-            })
-          end,
-          function(server_name)
-            local on_attach = require("plugins.lsp.handlers").on_attach
-            require("lspconfig")[server_name].setup({
-              on_attach = on_attach,
-              capabilities = capabilities,
             })
           end,
         },

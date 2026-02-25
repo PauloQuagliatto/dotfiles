@@ -1,12 +1,28 @@
 return {
   "stevearc/conform.nvim",
+  event = { "BufWritePre" },
+  cmd = { "ConformInfo" },
   keys = {
     {
       "<leader>f",
       function()
-        require("conform").format({
+        local conform = require("conform")
+        local formatters = conform.list_formatters_for_buffer()
+        local formatter_names = {}
+
+        for _, formatter in ipairs(formatters) do
+          table.insert(formatter_names, formatter.name)
+        end
+
+        if #formatter_names > 0 then
+          print("Formatter(s): " .. table.concat(formatter_names, ", "))
+        else
+          print("No formatter configured for this buffer")
+        end
+        conform.format({
           async = false,
-          lsp_fallback = true,
+          lsp_fallback = "true",
+          lsp_format = "fallback",
         })
       end,
       mode = "",
@@ -15,41 +31,24 @@ return {
   },
   opts = {
     formatters = {
-      prettier = {
-        require_cwd = true,
-        prepend_args = { "--config-precedence=prefer-file" },
-      },
       biome = {
-        require_cwd = true,
-        prepend_args = { "--config-precedence=prefer-file" },
+        command = "biome",
+        args = { "format", "--write", "--stdin-file-path", "$FILENAME" },
+        stdin = true,
       },
     },
     notify_on_error = false,
     formatters_by_ft = {
-      go = { "goimports", "gofmt" },
-      javascript = {
-        "biome",
-        "biome-organize-imports",
-        "prettier",
-      },
-      javascriptreact = {
-        "biome",
-        "biome-organize-imports",
-        "prettier",
-      },
       lua = { "stylua" },
-      python = { "ruff_format" },
+      json = { "biome", "biome-organize-imports" },
+      jsonc = { "biome", "biome-organize-imports" },
+      javascript = { "biome", "biome-organize-imports" },
+      javascriptreact = { "biome", "biome-organize-imports" },
+      typescript = { "biome", "biome-organize-imports" },
+      typescriptreact = { "biome", "biome-organize-imports" },
+      go = { "goimports", "gofmt" },
+      python = { "ruff_organize_imports", "ruff_format" },
       rust = { "rustfmt" },
-      typescript = {
-        "biome",
-        "biome-organize-imports",
-        "prettier",
-      },
-      typescriptreact = {
-        "biome",
-        "biome-organize-imports",
-        "prettier",
-      },
     },
   },
 }
