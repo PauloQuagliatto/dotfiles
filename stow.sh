@@ -1,1 +1,1 @@
-stow -d ~/dotfiles -t ~/.config .config
+stow -d ~/.mydotfiles/dotfiles -t ~/.config .config

@@ -9,6 +9,9 @@
 alias ls="exa --icons"
 alias bat="bat --style=auto"
 alias n="nvim"
+alias v="nvim"
+alias vi="nvim"
+alias vim="nvim"
 
 # -----------------------------------------------------
 # Package Managers
