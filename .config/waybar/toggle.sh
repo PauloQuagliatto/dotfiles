@@ -7,13 +7,9 @@
 #            |___/ |___/                         |___/
 #
 
-if [ -f $HOME/.config/paulo/settings/waybar-disabled ]; then
-    sh $HOME/.config/waybar/launch.sh
-    rm $HOME/.config/paulo/settings/waybar-disabled
+if [ -f $HOME/.config/ml4w/settings/waybar-disabled ]; then
+    rm $HOME/.config/ml4w/settings/waybar-disabled
 else
-    killall waybar || true
-    pkill waybar || true
-    sleep 0.5
-    touch $HOME/.config/paulo/settings/waybar-disabled
+    touch $HOME/.config/ml4w/settings/waybar-disabled
 fi
 $HOME/.config/waybar/launch.sh &

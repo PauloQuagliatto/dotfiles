@@ -22,88 +22,10 @@ killall waybar || true
 pkill waybar || true
 sleep 0.5
 
-# -----------------------------------------------------
-# Default theme: /THEMEFOLDER;/VARIATION
-# -----------------------------------------------------
-
-default_theme="/paulo-modern;/paulo-modern/default"
-
-# -----------------------------------------------------
-# Remove incompatible themes
-# -----------------------------------------------------
-
-if [ -f ~/.config/paulo/settings/waybar-theme.sh ]; then
-    themestyle=$(cat ~/.config/paulo/settings/waybar-theme.sh)
-    case "$themestyle" in
-    "/paulo-modern;/paulo-modern/light")
-        echo "$default_theme" >~/.config/paulo/settings/waybar-theme.sh
-        ;;
-    "/paulo-modern;/paulo-modern/dark")
-        echo "$default_theme" >~/.config/paulo/settings/waybar-theme.sh
-        ;;
-    "/paulo;/paulo/light")
-        echo "$default_theme" >~/.config/paulo/settings/waybar-theme.sh
-        ;;
-    "/paulo;/paulo/dark")
-        echo "$default_theme" >~/.config/paulo/settings/waybar-theme.sh
-        ;;
-    *)
-        echo
-        ;;
-    esac
-    if [ -d $HOME/.config/waybar/themes/paulo-modern/light ]; then
-        rm -rf $HOME/.config/waybar/themes/paulo-modern/light
-    fi
-    if [ -d $HOME/.config/waybar/themes/paulo-modern/dark ]; then
-        rm -rf $HOME/.config/waybar/themes/paulo-modern/dark
-    fi
-    if [ -d $HOME/.config/waybar/themes/paulo/light ]; then
-        rm -rf $HOME/.config/waybar/themes/paulo/light
-    fi
-    if [ -d $HOME/.config/waybar/themes/paulo/dark ]; then
-        rm -rf $HOME/.config/waybar/themes/paulo/dark
-    fi
-fi
-
-# -----------------------------------------------------
-# Get current theme information from ~/.config/paulo/settings/waybar-theme.sh
-# -----------------------------------------------------
-
-if [ -f ~/.config/paulo/settings/waybar-theme.sh ]; then
-    themestyle=$(cat ~/.config/paulo/settings/waybar-theme.sh)
-else
-    touch ~/.config/paulo/settings/waybar-theme.sh
-    echo "$default_theme" >~/.config/paulo/settings/waybar-theme.sh
-    themestyle=$default_theme
-fi
-
-IFS=';' read -ra arrThemes <<<"$themestyle"
-echo ":: Theme: ${arrThemes[0]}"
-
-if [ ! -f ~/.config/waybar/themes${arrThemes[1]}/style.css ]; then
-    themestyle=$default_theme
-fi
-
-# -----------------------------------------------------
-# Loading the configuration
-# -----------------------------------------------------
-
-config_file="config"
-style_file="style.css"
-
-# Standard files can be overwritten with an existing config-custom or style-custom.css
-if [ -f ~/.config/waybar/themes${arrThemes[0]}/config-custom ]; then
-    config_file="config-custom"
-fi
-if [ -f ~/.config/waybar/themes${arrThemes[1]}/style-custom.css ]; then
-    style_file="style-custom.css"
-fi
-
 # Check if waybar-disabled file exists
 if [ ! -f $HOME/.config/paulo/settings/waybar-disabled ]; then
     HYPRLAND_SIGNATURE=$(hyprctl instances -j | jq -r '.[0].instance')
-    HYPRLAND_INSTANCE_SIGNATURE="$HYPRLAND_SIGNATURE" waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &
-    # env GTK_DEBUG=interactive waybar -c ~/.config/waybar/themes${arrThemes[0]}/$config_file -s ~/.config/waybar/themes${arrThemes[1]}/$style_file &
+    HYPRLAND_INSTANCE_SIGNATURE="$HYPRLAND_SIGNATURE" waybar &
 else
     echo ":: Waybar disabled"
 fi
