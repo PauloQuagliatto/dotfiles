@@ -9,6 +9,7 @@
 
 paulo_cache_folder="$HOME/.cache/paulo/hyprland-dotfiles"
 cs_monitor="$HOME/.config/hypr/conf/monitors/cs.conf"
+default_monitor="$HOME/.config/hypr/conf/monitors/default.conf"
 monitor_conf="$HOME/.config/hypr/conf/monitor.conf"
 flag_file="$HOME/.config/paulo/settings/cs-enabled"
 
@@ -25,7 +26,7 @@ if [ -f "$flag_file" ]; then
         rm "$paulo_cache_folder/last_monitor.conf"
     else
         # Fallback: default monitor setup if no backup
-        echo "monitor=DP-1, 1920x1080@60, 0x0, 1" > "$monitor_conf"
+        echo "source=$default_monitor" > "$monitor_conf"
     fi
     rm "$flag_file"
 else
