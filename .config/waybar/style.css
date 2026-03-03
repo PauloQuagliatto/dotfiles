@@ -6,15 +6,11 @@
   }
 
 .modules-left {
-    margin:6px 0px 6px 8px;
+    margin: 0px 0px 0px 8px;
 }
 
 .modules-right {
-    margin:6px 8px 6px 0px;
-}
-
-.modules-center {
-    margin:6px 0px 6px 0px;
+    margin: 0px 8px 0px 0px;
 }
 
 #workspaces button {
