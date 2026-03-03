@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Notifications
 source "$HOME/.config/paulo/scripts/paulo-notification-handler"
 APP_NAME="System"

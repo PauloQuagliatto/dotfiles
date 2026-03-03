@@ -5,6 +5,18 @@
     font-size: 13px;
   }
 
+.modules-left {
+    margin:6px 0px 6px 8px;
+}
+
+.modules-right {
+    margin:6px 8px 6px 0px;
+}
+
+.modules-center {
+    margin:6px 0px 6px 0px;
+}
+
 #workspaces button {
     min-width: 20px;
     padding: 0 5px;

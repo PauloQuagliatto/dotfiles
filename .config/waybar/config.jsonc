@@ -13,7 +13,8 @@
 		"battery",
 		"cpu",
 		"memory",
-		"wlr/taskbar"
+		"wlr/taskbar",
+    "custom/exit"
 	],
 
 	"hyprland/workspaces": {
@@ -139,5 +140,10 @@
 		"tooltip-format-enumerate-connected": "{device_alias}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\t| Battery life: {device_battery_percentage}%",
 		"format-no-controller": ""
-	}
+	},
+  "custom/exit": {
+    "format": "",
+    "on-click": "~/.config/paulo/scripts/wlogout.sh",
+    "tooltip-format": "Left: Power menu"
+  },
 }
