@@ -8,7 +8,7 @@
 #
 
 # Remove gamemode flag
-if [ -f ~/.cache/gamemode ]; then
-    rm ~/.cache/gamemode
-    echo ":: ~/.cache/gamemode removed"
+if [ -f ~/.cache/cs ]; then
+    rm ~/.cache/cs
+    echo ":: ~/.cache/cs removed"
 fi
