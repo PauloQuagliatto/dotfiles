@@ -6,20 +6,7 @@ return {
     {
       "<leader>f",
       function()
-        local conform = require("conform")
-        local formatters = conform.list_formatters_for_buffer()
-        local formatter_names = {}
-
-        for _, formatter in ipairs(formatters) do
-          table.insert(formatter_names, formatter.name)
-        end
-
-        if #formatter_names > 0 then
-          print("Formatter(s): " .. table.concat(formatter_names, ", "))
-        else
-          print("No formatter configured for this buffer")
-        end
-        conform.format({
+        require("conform").format({
           async = false,
           lsp_fallback = "true",
           lsp_format = "fallback",
