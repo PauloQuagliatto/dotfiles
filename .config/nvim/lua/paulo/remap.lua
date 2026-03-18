@@ -39,6 +39,41 @@ vim.keymap.set("n", "<leader>tx", "<cmd>:tabclose<CR>")
 vim.keymap.set("n", "<leader>vp", "<cmd>:vsplit<CR>")
 vim.keymap.set("n", "<leader>hp", "<cmd>:split<CR>")
 
+-- Toggle breakpoint
+vim.keymap.set("n", "<leader>b", function()
+  require("dap").toggle_breakpoint()
+end, { noremap = true, silent = true })
+
+-- Continue / Start
+vim.keymap.set("n", "<leader>dc", function()
+  require("dap").continue()
+end, { noremap = true, silent = true })
+
+-- Step Over
+vim.keymap.set("n", "<leader>do", function()
+  require("dap").step_over()
+end, { noremap = true, silent = true })
+
+-- Step Into
+vim.keymap.set("n", "<leader>di", function()
+  require("dap").step_into()
+end, { noremap = true, silent = true })
+
+-- Step Out
+vim.keymap.set("n", "<leader>dO", function()
+  require("dap").step_out()
+end, { noremap = true, silent = true })
+
+-- Keymap to terminate debugging
+vim.keymap.set("n", "<leader>dq", function()
+  require("dap").terminate()
+end, { noremap = true, silent = true })
+
+-- Toggle DAP UI
+vim.keymap.set("n", "<leader>du", function()
+  require("dapui").toggle()
+end, { noremap = true, silent = true })
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(e)
     vim.bo[e.buf].omnifunc = "v:lua.vim.lsp.omnifunc"

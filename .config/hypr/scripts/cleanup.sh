@@ -12,3 +12,8 @@ if [ -f ~/.cache/cs ]; then
     rm ~/.cache/cs
     echo ":: ~/.cache/cs removed"
 fi
+
+if [ -f ~/.config/paulo/settings/waybar-disabled ]; then
+    rm ~/.config/paulo/settings/waybar-disabled
+    echo ":: ~/.config/paulo/settings/waybar-disabled removed"
+fi

@@ -9,12 +9,12 @@
 		"updates",
 		"pulseaudio",
 		"bluetooth",
-    "network",
+		"network",
 		"battery",
 		"cpu",
 		"memory",
-		"wlr/taskbar",
-    "custom/exit"
+		// "wlr/taskbar",
+		"custom/exit"
 	],
 
 	"hyprland/workspaces": {
@@ -36,10 +36,11 @@
 		"tooltip-format": "{:%d/%m//%Y}"
 	},
 	"cpu": {
-		"format": "CPU {usage}%"
+		"format": "{usage}% ",
+		"tooltip": false
 	},
 	"memory": {
-		"format": "RAM {used:0.1f}G"
+		"format": "{}% "
 	},
 	"wlr/taskbar": {
 		"format": "{icon}",
@@ -112,7 +113,7 @@
 	},
 	"pulseaudio": {
 		// "scroll-step": 1, // %, can be a float
-		"format": "{icon}  {volume}%",
+		"format": "{icon}   {volume}%",
 		"format-bluetooth": "{volume}% {icon} {format_source}",
 		"format-bluetooth-muted": " {icon} {format_source}",
 		"format-muted": " {format_source}",
@@ -141,9 +142,9 @@
 		"tooltip-format-enumerate-connected-battery": "{device_alias}\t| Battery life: {device_battery_percentage}%",
 		"format-no-controller": ""
 	},
-  "custom/exit": {
-    "format": "",
-    "on-click": "~/.config/paulo/scripts/wlogout.sh",
-    "tooltip-format": "Left: Power menu"
-  },
+	"custom/exit": {
+		"format": "",
+		"on-click": "~/.config/paulo/scripts/wlogout.sh",
+		"tooltip-format": "Left: Power menu"
+	}
 }

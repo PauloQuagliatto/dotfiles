@@ -27,6 +27,7 @@ return {
     notify_on_error = false,
     formatters_by_ft = {
       lua = { "stylua" },
+      css = { "biome", "biome-organize-imports" },
       json = { "biome", "biome-organize-imports" },
       jsonc = { "biome", "biome-organize-imports" },
       javascript = { "biome", "biome-organize-imports" },
