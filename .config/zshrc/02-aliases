@@ -15,7 +15,7 @@ alias vim="nvim"
 alias c="clear"
 
 # -----------------------------------------------------
-# Package Managers
+# Doppler Managers
 # -----------------------------------------------------
 pm() {
     if [ -f yarn.lock ]; then
@@ -66,3 +66,12 @@ dcf () {
 ud() {
    sudo tar -xvzf discord.tar.gz Discord && sudo rm -rf /opt/discord && sudo mv Discord /opt/discord
 }
+
+# -----------------------------------------------------
+# TMUX
+# -----------------------------------------------------
+alias tw="tmux new -s work"
+alias taw="tmux a -t work"
+alias ts="tmux new -s study"
+alias tas="tmux a -t study"
+alias tl="tmux ls"

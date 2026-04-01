@@ -75,7 +75,6 @@ window#waybar {
 
 #workspaces button:hover {
     color: @on_surface;
-    background: @primary_container;
     border-radius: 15px;
     border-color: @primary;
     box-shadow: none;
@@ -87,7 +86,7 @@ window#waybar {
 
 tooltip {
     border-radius: 10px;
-    background-color: @surface;
+    background-color: @background;
     border: 1px solid @border_color;
     padding: 5px;
     margin: 0px;
@@ -272,7 +271,6 @@ tooltip label {
 
 #custom-appmenu:hover {
     color: @on_surface;
-    background: @primary_container;
     border-color: @primary;
 }
 
@@ -340,7 +338,6 @@ tooltip label {
 
 #custom-updates.green:hover {
     color: @on_surface;
-    background: @primary_container;
     border-color: @primary;
 }
 
@@ -375,7 +372,6 @@ tooltip label {
 
 #disk:hover,#memory:hover,#cpu:hover,#language:hover {
     color: @on_surface;
-    background: @primary_container;
     border-color: @primary;
 }
 
@@ -411,7 +407,6 @@ tooltip label {
 
 #clock:hover {
     color: @on_surface;
-    background: @primary_container;
     border-color: @primary;
 }
 
@@ -433,7 +428,6 @@ tooltip label {
 
 #backlight:hover {
     color: @on_surface;
-    background: @primary_container;
     border-color: @primary;
 }
 
@@ -455,7 +449,7 @@ tooltip label {
 
 #pulseaudio:hover {
     color: @on_surface;
-    background: @primary_container;
+    
     border-color: @primary;
 }
 
@@ -481,13 +475,12 @@ tooltip label {
 
 #network.ethernet:hover {
     color: @on_surface;
-    background: @primary_container;
     border-color: @primary;
 }
 
 #network.wifi:hover {
     color: @on_surface;
-    background: @primary_container;
+    
     border-color: @primary;
 }
 
@@ -518,7 +511,7 @@ tooltip label {
 
 #bluetooth:hover {
     color: @on_surface;
-    background: @primary_container;
+    
     border-color: @primary;
 }
 
@@ -598,6 +591,5 @@ tooltip label {
 
 #custom-exit:hover {
     color: @on_surface;
-    background: @primary_container;
     border-color: @primary;
 }

@@ -33,7 +33,7 @@
 
 	"clock": {
 		"format": "{:%H:%M}",
-		"tooltip-format": "{:%d/%m//%Y}"
+		"tooltip-format": "{:%d/%m/%Y}"
 	},
 	"cpu": {
 		"format": "{usage}% ",

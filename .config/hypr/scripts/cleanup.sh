@@ -8,12 +8,12 @@
 #
 
 # Remove gamemode flag
-if [ -f ~/.cache/cs ]; then
-    rm ~/.cache/cs
-    echo ":: ~/.cache/cs removed"
+if [ -f ~/.config/paulo/settings/cs-enabled ]; then
+    rm ~/.config/paulo/settings/cs-enabled
+    echo ":: ~/.config/paulo/settings/cs-enabled removed"
 fi
 
-if [ -f ~/.config/paulo/settings/waybar-disabled ]; then
-    rm ~/.config/paulo/settings/waybar-disabled
-    echo ":: ~/.config/paulo/settings/waybar-disabled removed"
+if [ ! -f ~/.config/paulo/settings/waybar-disabled ]; then
+    touch ~/.config/paulo/settings/waybar-disabled
+    echo ":: ~/.config/paulo/settings/waybar-disabled created"
 fi
