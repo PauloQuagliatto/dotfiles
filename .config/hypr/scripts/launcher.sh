@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 # -----------------------------------------------------
-# Load Rofi Launcher
+# Load Hypr Launcher
 # -----------------------------------------------------
-pkill rofi || rofi -show drun -icon-theme "Tela dark" -show-icons -replace -i :
+hyprlauncher
