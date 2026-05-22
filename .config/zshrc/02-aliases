@@ -51,7 +51,7 @@ work () {
 }
 
 study () {
-    selected=$(find ~/Documents/studies -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find ~/Documents/study -mindepth 1 -maxdepth 1 -type d | fzf)
     cd $selected
 }
 
