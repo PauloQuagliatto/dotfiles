@@ -13,7 +13,7 @@ if [ -f ~/.config/paulo/settings/cs-enabled ]; then
     echo ":: ~/.config/paulo/settings/cs-enabled removed"
 fi
 
-if [ ! -f ~/.config/paulo/settings/waybar-disabled ]; then
-    touch ~/.config/paulo/settings/waybar-disabled
-    echo ":: ~/.config/paulo/settings/waybar-disabled created"
+if [ -f ~/.config/paulo/settings/waybar-disabled ]; then
+    rm ~/.config/paulo/settings/waybar-disabled
+    echo ":: ~/.config/paulo/settings/waybar-disabled removed"
 fi
