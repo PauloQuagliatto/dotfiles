@@ -119,7 +119,7 @@ return {
         settings = {
           pylsp = {
             plugins = {
-              pyflakes = { enabled = true },
+              pyflakes = { enabled = false },
               pycodestyle = { enabled = false },
               autopep8 = { enabled = false },
               yapf = { enabled = false },
@@ -127,8 +127,8 @@ return {
               pylsp_mypy = { enabled = false },
               pylsp_black = { enabled = false },
               pylsp_isort = { enabled = false },
-              flake8 = { enabled = true },
-              mypy = { enabled = true },
+              flake8 = { enabled = false },
+              mypy = { enabled = false },
               ruff = { enabled = true, formatEnabled = true },
             },
           },
