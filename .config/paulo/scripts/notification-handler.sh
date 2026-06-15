@@ -81,5 +81,4 @@ notify_user() {
     [[ ${#extra[@]} -gt 0 ]] && notify_args+=("${extra[@]}")
 
     notify-send "${notify_args[@]}" "$summary" "$message"
-
 }
