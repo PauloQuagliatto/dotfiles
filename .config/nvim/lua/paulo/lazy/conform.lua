@@ -8,8 +8,6 @@ return {
       function()
         require("conform").format({
           async = false,
-          lsp_fallback = "true",
-          lsp_format = "fallback",
         })
       end,
       mode = "",
@@ -37,6 +35,7 @@ return {
       go = { "goimports", "gofmt" },
       python = { "ruff_organize_imports", "ruff_format" },
       rust = { "rustfmt" },
+      vue = { "prettierd", "vuels" },
     },
   },
 }
