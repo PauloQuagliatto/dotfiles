@@ -1,0 +1,1 @@
+brave --password-store=basic --ozone-platform-hint=auto
