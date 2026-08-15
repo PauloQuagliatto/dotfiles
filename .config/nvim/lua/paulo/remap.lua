@@ -74,6 +74,8 @@ vim.keymap.set("n", "<leader>du", function()
   require("dapui").toggle()
 end, { noremap = true, silent = true })
 
+vim.keymap.set("n", "<leader>mp", "<cmd>:Markview splitToggle<CR>", { noremap = true, silent = true })
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(e)
     vim.bo[e.buf].omnifunc = "v:lua.vim.lsp.omnifunc"

@@ -30,7 +30,11 @@ return {
         stylua = {},
         tailwindcss = {},
         ts_ls = {},
+<<<<<<< HEAD
         vue_ls = {}, -- Added Vue Language Server
+=======
+        vue_ls = {},
+>>>>>>> 045c79a2cc8f7886daaec8b7d10dc282c1f38403
         zls = {},
       }
 
@@ -139,6 +143,53 @@ return {
         },
       })
 
+      local vue_ls_path = vim.fn.stdpath("data") .. "/mason/packages/vue-language-server/node_modules/@vue/language-server"
+      -- Configure TypeScript server with Vue plugin
+      vim.lsp.config("ts_ls", {
+        filetypes = { "typescript", "typescriptreact", "javascript", "javascriptreact", "vue" },
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = vue_ls_path,
+              languages = { "vue" },
+            },
+          },
+        },
+      }) -- Configure Vue Language Server
+      vim.lsp.config("vue_ls", {
+        filetypes = { "vue" },
+        root_markers = { "package.json" },
+        on_init = function(client)
+          -- Hybrid mode handler to forward TSServer requests
+          local retries = 0
+          local function typescriptHandler(_, result, context)
+            local ts_client = vim.lsp.get_clients({ bufnr = context.bufnr, name = "ts_ls" })[1]
+            if not ts_client then
+              if retries <= 10 then
+                retries = retries + 1
+                vim.defer_fn(function()
+                  typescriptHandler(_, result, context)
+                end, 100)
+              else
+                vim.notify("Could not find ts_ls client", vim.log.levels.ERROR)
+              end
+              return
+            end
+            local param = unpack(result)
+            local id, command, payload = unpack(param)
+            ts_client:exec_cmd({
+              title = "vue_request_forward",
+              command = "typescript.tsserverRequest",
+              arguments = { command, payload },
+            }, { bufnr = context.bufnr }, function(_, r)
+              local response_data = { { id, r and r.body } }
+              client:notify("tsserver/response", response_data)
+            end)
+          end
+          client.handlers["tsserver/request"] = typescriptHandler
+        end,
+      })
       vim.lsp.config("lua_ls", {})
       vim.lsp.config("pylsp", {
         capabilities = capabilities,
