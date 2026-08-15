@@ -1,0 +1,28 @@
+-- -----------------------------------------------------
+-- Window rules
+-- Name: "Default"
+-- -----------------------------------------------------
+
+-- idleinhibit
+-- hl.window_rule({
+--     name  = "idleinhibit",
+--     match = { class = "[window]" },
+--     idleinhibit = "fullscreen", -- Available modes: none, always, focus, fullscreen
+-- })
+
+-- xwayland related rules
+-- when moving objects in resolve a large border is produced
+-- This rule prevents that and serves as a template for any problematic xwayland apps
+-- hl.window_rule({
+--     name  = "resolve-noblur",
+--     match = { class = "^(resolve)$", xwayland = true },
+--     no_blur = true,
+-- })
+-- This is a general rule for xwayland apps but can have other consequences
+-- for one user it impacted EMACs so it's disabled by default
+-- It's here as a reference or for quick triage of xwayland apps
+-- hl.window_rule({
+--     name  = "xwayland-noblur",
+--     match = { xwayland = true },
+--     no_blur = true,
+-- })
