@@ -8,10 +8,6 @@ return {
       function()
         require("conform").format({
           async = false,
-<<<<<<< HEAD
-=======
-          lsp_format = "fallback",
->>>>>>> 045c79a2cc8f7886daaec8b7d10dc282c1f38403
         })
       end,
       mode = "",

@@ -30,11 +30,7 @@ return {
         stylua = {},
         tailwindcss = {},
         ts_ls = {},
-<<<<<<< HEAD
         vue_ls = {}, -- Added Vue Language Server
-=======
-        vue_ls = {},
->>>>>>> 045c79a2cc8f7886daaec8b7d10dc282c1f38403
         zls = {},
       }
 
