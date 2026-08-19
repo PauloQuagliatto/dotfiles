@@ -20,7 +20,7 @@
 	"hyprland/workspaces": {
 		"on-scroll-up": "hyprctl dispatch workspace r-1",
 		"on-scroll-down": "hyprctl dispatch workspace r+1",
-		"on-click": "activate",
+    "on-click": "hyprctl dipatch workspace",
 		"active-only": false,
 		"all-outputs": true,
 		"format": "{}",
@@ -84,7 +84,7 @@
 	// Network
 	"network": {
 		"format": "{ifname}",
-		"format-wifi": " {signalStrength}%",
+		"format-wifi": "  {signalStrength}%",
 		"format-ethernet": "  {ifname}",
 		"format-disconnected": "Disconnected !",
 		"tooltip-format": " {ifname} via {gwaddri}",
