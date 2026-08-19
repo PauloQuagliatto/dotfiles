@@ -34,6 +34,3 @@ done
 if [ -f ~/.zshrc_custom ]; then
     source ~/.zshrc_custom
 fi
-
-# Turso
-export PATH="$PATH:/home/paulomq/.turso"

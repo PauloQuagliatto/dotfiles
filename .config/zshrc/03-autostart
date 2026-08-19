@@ -29,4 +29,3 @@ export PATH="/home/paulomq/.bun/bin:$PATH"
 # GOOGLE CHROME
 # -----------------------------------------------------
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
-
