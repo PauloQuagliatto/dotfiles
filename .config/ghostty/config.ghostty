@@ -1,0 +1,56 @@
+font-family = UbuntuMono Nerd Font
+font-size = 16
+
+background = #0d1209
+foreground = #d4e6c3
+background-opacity = 0.8
+window-padding-x = 10
+window-padding-y = 10
+window-decoration = false
+window-save-state = never
+window-width = 1920
+window-height = 1080
+
+cursor-color = #6b8f5e
+cursor-text = #0d1209
+cursor-style-blink = true
+
+scrollback-limit = 1048576
+mouse-scroll-multiplier = discrete:1
+bell-features = no-audio
+confirm-close-surface = false
+
+selection-foreground = #0d1209
+selection-background = #6b8f5e
+
+palette = 0=#1a2812
+palette = 1=#c47a6a
+palette = 2=#8fb87a
+palette = 3=#a8c77a
+palette = 4=#7a9eb8
+palette = 5=#b88aaf
+palette = 6=#6b9e8a
+palette = 7=#b8c9a8
+palette = 8=#2d4a22
+palette = 9=#c47a6a
+palette = 10=#8fb87a
+palette = 11=#a8c77a
+palette = 12=#7a9eb8
+palette = 13=#b88aaf
+palette = 14=#6b9e8a
+palette = 15=#9aab8a
+
+# Let Neovim receive Ctrl-letter input instead of Ghostty handling shifted variants.
+keybind = ctrl+shift+a=unbind
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+e=unbind
+keybind = ctrl+shift+f=unbind
+keybind = ctrl+shift+i=unbind
+keybind = ctrl+shift+j=unbind
+keybind = ctrl+shift+n=unbind
+keybind = ctrl+shift+o=unbind
+keybind = ctrl+shift+p=unbind
+keybind = ctrl+shift+q=unbind
+keybind = ctrl+shift+t=unbind
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+shift+w=unbind

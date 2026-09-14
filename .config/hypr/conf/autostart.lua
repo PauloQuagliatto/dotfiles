@@ -15,7 +15,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("~/.config/hypr/scripts/wallpaper-restore.sh")
 
     -- Load Notification Daemon
-    hl.exec_cmd("swaync")
+    hl.exec_cmd("dunst -conf ~/.config/dunst/dunstrc")
 
     -- Start XDG
     hl.exec_cmd("~/.config/hypr/scripts/xdg.sh")

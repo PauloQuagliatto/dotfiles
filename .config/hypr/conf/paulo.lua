@@ -1,13 +1,5 @@
 local HYPRSCRIPTS = "~/.config/hypr/scripts"
 
--- SwayNC
-hl.layer_rule({ match = { namespace = "swaync-control-center" }, blur = true })
-hl.layer_rule({ match = { namespace = "swaync-notification-window" }, blur = true })
-hl.layer_rule({ match = { namespace = "swaync-control-center" }, ignore_alpha = 0 })
-hl.layer_rule({ match = { namespace = "swaync-notification-window" }, ignore_alpha = 0 })
-hl.layer_rule({ match = { namespace = "swaync-control-center" }, ignore_alpha = 0.5 })
-hl.layer_rule({ match = { namespace = "swaync-notification-window" }, ignore_alpha = 0.5 })
-
 -- Pavucontrol
 hl.window_rule({
     name   = "pavucontrol",
@@ -164,6 +156,7 @@ hl.env("GDK_SCALE", "1")
 -- Toolkit Backend
 hl.env("GDK_BACKEND", "wayland,x11,*")
 hl.env("CLUTTER_BACKEND", "wayland")
+hl.env("GTK_IM_MODULE", "simple")
 
 -- Mozilla
 hl.env("MOZ_ENABLE_WAYLAND", "1")
