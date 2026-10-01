@@ -2,128 +2,128 @@ local HYPRSCRIPTS = "~/.config/hypr/scripts"
 
 -- Pavucontrol
 hl.window_rule({
-    name   = "pavucontrol",
-    match  = { class = "(.*org.pulseaudio.pavucontrol.*)" },
-    float  = true,
-    center = true,
-    pin    = true,
-    size   = { 700, 600 },
+	name = "pavucontrol",
+	match = { class = "(.*org.pulseaudio.pavucontrol.*)" },
+	float = true,
+	center = true,
+	pin = true,
+	size = { 700, 600 },
 })
 
 -- Guitarix
 hl.window_rule({
-    name  = "guitarix",
-    match = { class = "(.*guitarix*)" },
-    float = false,
+	name = "guitarix",
+	match = { class = "(.*guitarix*)" },
+	float = false,
 })
 
 -- Waypaper
 hl.window_rule({
-    name   = "waypaper",
-    match  = { class = "(.*waypaper.*)" },
-    float  = true,
-    center = true,
-    pin    = true,
-    size   = { 900, 700 },
+	name = "waypaper",
+	match = { class = "(.*waypaper.*)" },
+	float = true,
+	center = true,
+	pin = true,
+	size = { 900, 700 },
 })
 
 -- Newelle
 hl.window_rule({
-    name   = "newelle",
-    match  = { class = "(io.github.qwersyk.Newelle)" },
-    float  = true,
-    center = true,
-    pin    = true,
-    size   = { 1000, 700 },
+	name = "newelle",
+	match = { class = "(io.github.qwersyk.Newelle)" },
+	float = true,
+	center = true,
+	pin = true,
+	size = { 1000, 700 },
 })
 
 -- Blueman Manager
 hl.window_rule({
-    name   = "blueman-manager",
-    match  = { class = "(blueman-manager)" },
-    float  = true,
-    center = true,
-    size   = { 800, 600 },
+	name = "blueman-manager",
+	match = { class = "(blueman-manager)" },
+	float = true,
+	center = true,
+	size = { 800, 600 },
 })
 
 -- nwg-look
 hl.window_rule({
-    name   = "nwg-look",
-    match  = { class = "(nwg-look)" },
-    float  = true,
-    center = true,
-    size   = { 700, 600 },
+	name = "nwg-look",
+	match = { class = "(nwg-look)" },
+	float = true,
+	center = true,
+	size = { 700, 600 },
 })
 
 -- nwg-displays
 hl.window_rule({
-    name   = "nwg-displays",
-    match  = { class = "(nwg-displays)" },
-    float  = true,
-    center = true,
-    size   = { 900, 600 },
+	name = "nwg-displays",
+	match = { class = "(nwg-displays)" },
+	float = true,
+	center = true,
+	size = { 900, 600 },
 })
 
 -- System Mission Center
 hl.window_rule({
-    name   = "missioncenter",
-    match  = { class = "(io.missioncenter.MissionCenter)" },
-    float  = true,
-    center = true,
-    pin    = true,
-    size   = { 900, 600 },
+	name = "missioncenter",
+	match = { class = "(io.missioncenter.MissionCenter)" },
+	float = true,
+	center = true,
+	pin = true,
+	size = { 900, 600 },
 })
 
 -- Gnome Calculator
 hl.window_rule({
-    name   = "gnome-calculator",
-    match  = { class = "(org.gnome.Calculator)" },
-    float  = true,
-    center = true,
-    size   = { 700, 600 },
+	name = "gnome-calculator",
+	match = { class = "(org.gnome.Calculator)" },
+	float = true,
+	center = true,
+	size = { 700, 600 },
 })
 
 -- Hyprland Share Picker
 hl.window_rule({
-    name   = "hyprland-share-picker",
-    match  = { class = "(hyprland-share-picker)" },
-    float  = true,
-    pin    = true,
-    center = true,
-    size   = { 600, 400 },
+	name = "hyprland-share-picker",
+	match = { class = "(hyprland-share-picker)" },
+	float = true,
+	pin = true,
+	center = true,
+	size = { 600, 400 },
 })
 
 -- nm-connection-editor
 hl.window_rule({
-    name   = "nm-connection-editor",
-    match  = { class = "(nm-connection-editor)" },
-    float  = true,
-    center = true,
-    size   = { 800, 700 },
+	name = "nm-connection-editor",
+	match = { class = "(nm-connection-editor)" },
+	float = true,
+	center = true,
+	size = { 800, 700 },
 })
 
 -- Picture-in-Picture
 hl.window_rule({
-    name   = "Picture-in-Picture",
-    match  = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
-    float  = true,
-    pin    = true,
-    center = true,
+	name = "Picture-in-Picture",
+	match = { title = "^([Pp]icture[-\\s]?[Ii]n[-\\s]?[Pp]icture)(.*)$" },
+	float = true,
+	pin = true,
+	center = true,
 })
 
 -- Flameshot
 hl.window_rule({
-    name             = "flameshot-multi-display-fix",
-    match            = { class = "flameshot" },
-    animation        = "fade",
-    rounding         = 0,
-    border_size      = 0,
-    fullscreen_state = "0 0",
-    float            = true,
-    pin              = true,
-    monitor          = "DP-3",
-    move             = { 0, 0 },
-    size             = { "monitor_w*2", "monitor_h" },
+	name = "flameshot-multi-display-fix",
+	match = { class = "flameshot" },
+	animation = "fade",
+	rounding = 0,
+	border_size = 0,
+	fullscreen_state = "0 0",
+	float = true,
+	pin = true,
+	monitor = "DP-3",
+	move = { 0, 0 },
+	size = { "monitor_w*2", "monitor_h" },
 })
 
 -- Float and center file pickers
@@ -171,9 +171,9 @@ hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
 
 -- XWayland
 hl.config({
-    xwayland = {
-        force_zero_scaling = true,
-    },
+	xwayland = {
+		force_zero_scaling = true,
+	},
 })
 
 -- SDL version
@@ -184,5 +184,5 @@ hl.env("WAYLAND_DISPLAY", "wayland-0")
 
 -- Start hyprpaper
 hl.on("hyprland.start", function()
-    hl.exec_cmd("hyprpaper")
+	hl.exec_cmd("hyprpaper")
 end)

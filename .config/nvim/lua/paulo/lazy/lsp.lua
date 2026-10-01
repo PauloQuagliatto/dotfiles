@@ -19,9 +19,10 @@ return {
       require("fidget").setup()
       require("mason").setup({})
 
-      -- 1. Add vue_ls to the servers table so Mason installs it
       local servers = {
         biome = {},
+        eslint = {},
+        oxlint = {},
         dockerls = {},
         docker_compose_language_service = {},
         lua_ls = {},
@@ -35,6 +36,29 @@ return {
       }
 
       local ensure_installed = vim.tbl_keys(servers or {})
+      local web_tools = require("paulo.web_tools")
+      local function lint_root(name)
+        return function(bufnr, on_dir)
+          local filename = vim.api.nvim_buf_get_name(bufnr)
+          if filename == "" or web_tools.linter(filename) ~= name then
+            return
+          end
+          on_dir(vim.fs.root(bufnr, { "package.json", ".git" }) or vim.fs.dirname(filename))
+        end
+      end
+      for _, name in ipairs({ "biome", "eslint", "oxlint" }) do
+        local on_attach = vim.lsp.config[name].on_attach
+        vim.lsp.config(name, {
+          capabilities = capabilities,
+          root_dir = lint_root(name),
+          on_attach = function(client, bufnr)
+            client.server_capabilities.documentFormattingProvider = false
+            if on_attach then
+              on_attach(client, bufnr)
+            end
+          end,
+        })
+      end
       require("mason-lspconfig").setup({
         ensure_installed = ensure_installed,
         handlers = {

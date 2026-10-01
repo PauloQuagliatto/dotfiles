@@ -4,17 +4,17 @@
 -- -----------------------------------------------------
 
 hl.config({
-    dwindle = {
-        preserve_split = true,
-    },
+	dwindle = {
+		preserve_split = true,
+	},
 
-    master = {
-        -- new_status = "master"
-    },
+	master = {
+		-- new_status = "master"
+	},
 
-    binds = {
-        workspace_back_and_forth = false,
-        allow_workspace_cycles   = true,
-        pass_mouse_when_bound    = false,
-    },
+	binds = {
+		workspace_back_and_forth = false,
+		allow_workspace_cycles = true,
+		pass_mouse_when_bound = false,
+	},
 })
