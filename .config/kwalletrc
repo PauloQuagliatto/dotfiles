@@ -1,2 +1,5 @@
 [Wallet]
-Enabled=false
+Default Wallet=Default keyring
+Enabled=true
+First Use=false
+Use One Wallet=true

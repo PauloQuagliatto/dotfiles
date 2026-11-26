@@ -18,3 +18,8 @@ eval "$(mise activate zsh)"
 # GOOGLE CHROME
 # -----------------------------------------------------
 export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
+
+# -----------------------------------------------------
+# Vite+ bin (https://viteplus.dev)
+# -----------------------------------------------------
+. "/home/paulomq/.config/vite-plus/env"

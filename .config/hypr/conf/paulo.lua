@@ -111,19 +111,12 @@ hl.window_rule({
 	center = true,
 })
 
--- Flameshot
+-- CS2 has no exclusive fullscreen on Linux (only windowed / windowed-fullscreen),
+-- so force real fullscreen from the compositor side
 hl.window_rule({
-	name = "flameshot-multi-display-fix",
-	match = { class = "flameshot" },
-	animation = "fade",
-	rounding = 0,
-	border_size = 0,
-	fullscreen_state = "0 0",
-	float = true,
-	pin = true,
-	monitor = "DP-3",
-	move = { 0, 0 },
-	size = { "monitor_w*2", "monitor_h" },
+	name = "cs2-fullscreen",
+	match = { class = "cs2" },
+	fullscreen_state = "2 2",
 })
 
 -- Float and center file pickers

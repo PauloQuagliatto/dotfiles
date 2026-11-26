@@ -80,3 +80,11 @@ alias taw="tmux a -t work"
 alias ts="tmux new -s study"
 alias tas="tmux a -t study"
 alias tl="tmux ls"
+
+tn () {
+    tmux new -s "${1:-main}"
+}
+
+ta () {
+    tmux a -t "${1:-main}"
+}
