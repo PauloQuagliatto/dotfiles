@@ -21,3 +21,4 @@ export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin/
 export PATH=$PATH:$ANDROID_HOME/build-tools/33.0.0/   
 export PATH="$PATH:/home/paulomq/.lmstudio/bin"
 export PATH="$PATH:/home/paulomq/.turso"
+export PATH="$HOME/.local/bin:$PATH"
