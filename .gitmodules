@@ -1,0 +1,3 @@
+[submodule ".config/opencode/vendor/i-have-adhd"]
+	path = .config/opencode/vendor/i-have-adhd
+	url = https://github.com/ayghri/i-have-adhd
