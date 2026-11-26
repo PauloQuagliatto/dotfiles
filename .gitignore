@@ -1,2 +1,12 @@
 waybar-disabled
 cs-enabled
+
+# opencode: generated, backup and machine-local files (safe to ignore)
+.config/opencode/node_modules/
+.config/opencode/package.json
+.config/opencode/package-lock.json
+.config/opencode/bun.lock
+.config/opencode/service.json
+.config/opencode/*.bak-*
+.config/opencode/plugins/*.bak-*
+.config/opencode/vendor/no-ai-slop/
