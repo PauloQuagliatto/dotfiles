@@ -4,7 +4,7 @@
       "ai-memory": {
         "type": "local",
         "command": [
-          "/home/paulomq/.local/share/mise/installs/github-akitaonrails-ai-memory/3.3.1/ai-memory",
+          "ai-memory",
           "mcp-bridge",
           "--no-session-id",
           "--server-url",
