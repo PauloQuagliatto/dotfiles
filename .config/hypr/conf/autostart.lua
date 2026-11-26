@@ -11,6 +11,9 @@ hl.on("hyprland.start", function()
     -- Start Polkit
     hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
 
+    -- Start KWallet secret service (org.freedesktop.secrets)
+    hl.exec_cmd("/usr/bin/ksecretd")
+
     -- Load Wallpaper
     hl.exec_cmd("~/.config/hypr/scripts/wallpaper-restore.sh")
 

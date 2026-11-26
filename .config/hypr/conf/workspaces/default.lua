@@ -6,7 +6,7 @@
 -- Assigning workspace to a certain monitor. Below are just examples
 hl.workspace_rule({
     workspace  = "1",
-    monitor    = "DP-3",
+    monitor    = "DP-2",
     default    = true,
     persistent = true,
 })
